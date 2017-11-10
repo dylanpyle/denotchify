@@ -5,6 +5,18 @@ function ensureEl<ElementType extends Element>(
   return el as ElementType;
 }
 
+function triggerDownload(
+  file: Blob,
+  filename: string = 'wallpaper.png'
+): void {
+  const link = document.createElement('a');
+  const url = URL.createObjectURL(file);
+  link.href = url;
+  link.download = filename;
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
 const CANVAS_WIDTH = 1125;
 const CANVAS_HEIGHT = 2436;
 
@@ -216,8 +228,7 @@ class Page {
   private onDownloadClick = (): void => {
     this.cropTool.getFinalImage()
       .then((image: Blob) => {
-        const url = URL.createObjectURL(image);
-        window.location.href = url;
+        triggerDownload(image);
       });
   }
 }

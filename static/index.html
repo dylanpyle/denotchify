@@ -9,35 +9,54 @@
     <link rel='stylesheet' href='style.css'>
   </head>
   <body>
-    <h1>Denotchify</h1>
+    <main>
+      <h1>Denotchify</h1>
 
-    <section class='explainer'>
-      Explainer
-    </section>
+      <section class='explainer'>
+        <div class='before'>
+          <h2>Before</h2>
+          <img src='before.png' class='before-image' alt='Wallpaper with visible notch' />
+        </div>
 
-    <section class='denotch-upload-tool'>
-      <input
-        type='file'
-        class='denotch-file'
-      />
-      Upload?
-    </section>
+        <div class='after'>
+          <h2>After</h2>
+          <img src='after.png' class='after-image' alt='Wallpaper with invisible notch' />
+        </div>
+      </section>
 
-    <section class='denotch-crop-tool hidden'>
-      <canvas class='denotch-canvas'></canvas>
-      <input
-        type='range'
-        min='0.1'
-        max='4'
-        value='1'
-        step='0.01'
-        class='denotch-zoom'
-      >
-    </section>
+      <section class='denotch-upload-tool'>
+        <h1>Step 1: Upload a wallpaper image</h1>
+        <input
+          type='file'
+          class='denotch-file'
+        />
+      </section>
 
-    <section class='denotch-download-tool hidden'>
-      <button type='button' class='denotch-download-button'>Download</button>
-    </section>
+      <section class='denotch-crop-tool hidden'>
+        <h1>Step 2: Position the image</h1>
+        <canvas class='denotch-canvas'></canvas>
+        <input
+          type='range'
+          min='0.1'
+          max='4'
+          value='1'
+          step='0.01'
+          class='denotch-zoom'
+        >
+      </section>
+
+      <section class='denotch-download-tool hidden'>
+        <h1>Step 3: Download your new wallpaper</h1>
+        <p>
+          Once you have the new wallpaper image on your device, open your
+          Wallpaper settings and select the image. Make sure it's set to "Still",
+          zoomed out all the way, and dragged to the bottom of the screen. Don't
+          worry if it looks like there's too much black space at the top of the
+          screen; it'll fit just right once you save it.
+        </p>
+        <button type='button' class='denotch-download-button'>Download</button>
+      </section>
+    </main>
 
     <script defer src='index.js'></script>
   </body>

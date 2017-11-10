@@ -9,6 +9,8 @@
     <link rel='stylesheet' href='style.css'>
   </head>
   <body>
+    <a href='https://github.com/denotchify/denotchify'><img style='position: absolute; top: 0; right: 0; border: 0;' src='https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67' alt='Fork me on GitHub' data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png'></a>
+
     <main>
       <h1>Denotchify</h1>
 
@@ -25,7 +27,7 @@
       </section>
 
       <section class='denotch-upload-tool'>
-        <h1>Step 1: Upload a wallpaper image</h1>
+        <h1>Step 1: Upload original wallpaper image</h1>
         <input
           type='file'
           class='denotch-file'
@@ -34,27 +36,33 @@
 
       <section class='denotch-crop-tool hidden'>
         <h1>Step 2: Position the image</h1>
+        <div class='zoom'>
+          <input
+            type='range'
+            min='0.1'
+            max='1.9'
+            value='1'
+            step='0.01'
+            class='denotch-zoom'
+          >
+        </div>
         <canvas class='denotch-canvas'></canvas>
-        <input
-          type='range'
-          min='0.1'
-          max='4'
-          value='1'
-          step='0.01'
-          class='denotch-zoom'
-        >
       </section>
 
       <section class='denotch-download-tool hidden'>
         <h1>Step 3: Download your new wallpaper</h1>
+        <button type='button' class='denotch-download-button'>Download</button>
+
         <p>
           Once you have the new wallpaper image on your device, open your
-          Wallpaper settings and select the image. Make sure it's set to "Still",
-          zoomed out all the way, and dragged to the bottom of the screen. Don't
-          worry if it looks like there's too much black space at the top of the
-          screen; it'll fit just right once you save it.
+          Wallpaper settings and select the image.
         </p>
-        <button type='button' class='denotch-download-button'>Download</button>
+        <p>
+          Make sure it's set to "Still", zoomed out all the way, and dragged to
+          the bottom of the screen. Don't worry if it looks like there's too
+          much black space at the top of the screen; it'll fit just right once
+          you save it.
+        </p>
       </section>
     </main>
 

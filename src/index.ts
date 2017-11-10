@@ -131,21 +131,25 @@ class CropTool {
     const offsetX = this.isMouseDown ? dragOffset.x : this.offsetX;
     const offsetY = this.isMouseDown ? dragOffset.y : this.offsetY;
 
+    const initialWidth = (width / height) * CANVAS_HEIGHT;
+
     this.context.drawImage(
       this.originalImage,
       offsetX,
       offsetY,
-      width * this.zoomFactor,
-      height * this.zoomFactor
+      initialWidth * this.zoomFactor,
+      CANVAS_HEIGHT * this.zoomFactor
     );
 
     this.context.drawImage(this.templateImage, 0, 0);
   }
 
   private getDragOffset(): MousePosition {
+    const pxScale = CANVAS_WIDTH / this.canvas.getBoundingClientRect().width;
+
     return {
-      x: this.offsetX + (this.mouseMovePosition.x - this.mouseDownPosition.x),
-      y: this.offsetY + (this.mouseMovePosition.y - this.mouseDownPosition.y)
+      x: this.offsetX + ((this.mouseMovePosition.x - this.mouseDownPosition.x) * pxScale),
+      y: this.offsetY + ((this.mouseMovePosition.y - this.mouseDownPosition.y) * pxScale)
     };
   }
 

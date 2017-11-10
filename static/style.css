@@ -4,13 +4,18 @@ html, body, h1, h2, p, input, section, main {
 }
 
 h1 {
-  text-align: center;
   margin-bottom: 50px;
+}
+
+p {
+  text-align: left;
+  margin-bottom: 30px;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 15px;
+  text-align: center;
 }
 
 .hidden {
@@ -21,6 +26,10 @@ main {
   max-width: 800px;
   padding: 80px 50px;
   margin: 0 auto;
+}
+
+section {
+  margin-bottom: 50px;
 }
 
 .explainer {
@@ -38,4 +47,18 @@ main {
 .before-image, .after-image {
   width: 100%;
   max-width: 400px;
+}
+
+.denotch-canvas {
+  display: block;
+  width: 300px;
+  border: 2px solid black;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.denotch-download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 30px;
 }

@@ -82,7 +82,7 @@ class CropTool {
     this.offsetY = 0;
 
     this.templateImage = new Image();
-    this.templateImage.src = '/template.png';
+    this.templateImage.src = 'template.png';
 
     this.isMouseDown = false;
     this.mouseDownPosition = { x: 0, y: 0 };

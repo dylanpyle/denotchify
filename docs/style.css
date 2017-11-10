@@ -1,3 +1,41 @@
+html, body, h1, h2, p, input, section, main {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 15px;
+}
+
 .hidden {
   display: none;
+}
+
+main {
+  max-width: 800px;
+  padding: 80px 50px;
+  margin: 0 auto;
+}
+
+.explainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.explainer h2 {
+  margin-bottom: 20px;
+}
+
+.before-image, .after-image {
+  width: 100%;
+  max-width: 400px;
 }

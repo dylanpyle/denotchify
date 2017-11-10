@@ -5,6 +5,15 @@ function ensureEl(el) {
     }
     return el;
 }
+function triggerDownload(file, filename) {
+    if (filename === void 0) { filename = 'wallpaper.png'; }
+    var link = document.createElement('a');
+    var url = URL.createObjectURL(file);
+    link.href = url;
+    link.download = filename;
+    link.click();
+    URL.revokeObjectURL(url);
+}
 var CANVAS_WIDTH = 1125;
 var CANVAS_HEIGHT = 2436;
 var UploadTool = /** @class */ (function () {
@@ -140,8 +149,7 @@ var Page = /** @class */ (function () {
         this.onDownloadClick = function () {
             _this.cropTool.getFinalImage()
                 .then(function (image) {
-                var url = URL.createObjectURL(image);
-                window.location.href = url;
+                triggerDownload(image);
             });
         };
         this.uploadTool = new UploadTool(ensureEl(el.querySelector('.denotch-upload-tool')));

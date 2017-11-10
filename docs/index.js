@@ -50,7 +50,8 @@ var CropTool = /** @class */ (function () {
             var dragOffset = _this.getDragOffset();
             var offsetX = _this.isMouseDown ? dragOffset.x : _this.offsetX;
             var offsetY = _this.isMouseDown ? dragOffset.y : _this.offsetY;
-            _this.context.drawImage(_this.originalImage, offsetX, offsetY, width * _this.zoomFactor, height * _this.zoomFactor);
+            var initialWidth = (width / height) * CANVAS_HEIGHT;
+            _this.context.drawImage(_this.originalImage, offsetX, offsetY, initialWidth * _this.zoomFactor, CANVAS_HEIGHT * _this.zoomFactor);
             _this.context.drawImage(_this.templateImage, 0, 0);
         };
         this.onZoomChange = function () {
@@ -112,9 +113,10 @@ var CropTool = /** @class */ (function () {
         });
     };
     CropTool.prototype.getDragOffset = function () {
+        var pxScale = CANVAS_WIDTH / this.canvas.getBoundingClientRect().width;
         return {
-            x: this.offsetX + (this.mouseMovePosition.x - this.mouseDownPosition.x),
-            y: this.offsetY + (this.mouseMovePosition.y - this.mouseDownPosition.y)
+            x: this.offsetX + ((this.mouseMovePosition.x - this.mouseDownPosition.x) * pxScale),
+            y: this.offsetY + ((this.mouseMovePosition.y - this.mouseDownPosition.y) * pxScale)
         };
     };
     return CropTool;

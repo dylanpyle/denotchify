@@ -19,6 +19,11 @@ copy-static-assets:
 build: clean copy-static-assets
 	$(npm_bin)/tsc
 
+.PHONY: publish
+publish: build
+	@-rm -r docs
+	@cp -R dist docs
+
 .PHONY: dev
 dev:
 	fswatch -0 src/*.ts static/*.html | xargs -0n1 -I '{}' make build

@@ -19,8 +19,8 @@ copy-static-assets:
 build: clean copy-static-assets
 	$(npm_bin)/tsc
 
-.PHONY: publish
-publish: build
+.PHONY: build-pages
+build-pages: build
 	@-rm -r docs
 	@cp -R dist docs
 

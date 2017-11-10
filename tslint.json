@@ -1,0 +1,23 @@
+{
+  "extends": ["tslint:recommended"],
+  "rules": {
+    "eofline": true,
+    "quotemark": [true, "single", "avoid-template", "avoid-escape"],
+    "import-name": [false],
+    "interface-name": [true, "never-prefix"],
+    "ordered-imports": [true, { "import-sources-order": "any", "named-imports-order": "case-insensitive" }],
+    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
+    "typedef": [
+      true,
+      "parameter",
+      "arrow-parameter",
+      "property-declaration",
+      "call-signature",
+      "arrow-call-signature"
+    ],
+    "max-line-length": [true, 100],
+    "max-classes-per-file": [false],
+    "object-shorthand-properties-first": [false]
+  }
+}

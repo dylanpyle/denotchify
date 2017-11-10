@@ -1,0 +1,16 @@
+{
+  "name": "denotchify",
+  "version": "0.0.1",
+  "description": "Remove the iPhone X notch from your wallpapers",
+  "main": "index.html",
+  "scripts": {
+    "start": "make build",
+    "test": "make lint && make build"
+  },
+  "author": "Dylan Pyle <me@dylanpyle.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tslint": "5.8.0",
+    "typescript": "2.5.2"
+  }
+}
